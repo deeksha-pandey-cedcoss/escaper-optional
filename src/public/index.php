@@ -13,6 +13,7 @@ use Phalcon\Http\Response\Cookies;
 use time\Time;
 use Phalcon\Logger;
 use Phalcon\Session\Adapter\Stream;
+use Phalcon\Escaper;
 
 $config = new Config([]);
 
@@ -108,6 +109,12 @@ $container->set(
     'time',
     function () {
         return new Time();
+    }
+);
+$container->set(
+    'escaper',
+    function () {
+        return new Escaper();
     }
 );
 

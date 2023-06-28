@@ -16,12 +16,11 @@ class SignupController extends Controller
     public function registerAction()
     {
         
-        $esacaper = new Myescaper();
-
+      
         if ($this->request->isPost()) {
-            $name = $esacaper->sanitize($this->request->getPost('name'));
-            $email = $esacaper->sanitize($this->request->getPost('email'));
-            $password = $esacaper->sanitize($this->request->getPost('password'));
+            $name =$this->escaper->escapeHtml($this->request->getPost('name'));
+            $email = $this->escaper->escapeHtml($this->request->getPost('email'));
+            $password = $this->escaper->escapeHtml($this->request->getPost('password'));
 
 
             $collection = $this->mongo->Users;
