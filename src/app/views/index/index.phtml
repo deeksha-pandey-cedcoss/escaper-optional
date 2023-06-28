@@ -1,0 +1,14 @@
+<?php
+echo "<h1>Hello User Welcome</h1>";
+echo PHP_EOL;
+// link to signup page
+echo $this->tag->linkTo(
+    'signup',
+    'Sign Up Here!'
+);
+echo "<br>";
+// link to login page
+echo $this->tag->linkTo(
+    'login',
+    'Login In Here!'
+);
